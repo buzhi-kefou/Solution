@@ -6,6 +6,18 @@ public class P11 {
     }
 
     public int maxArea(int[] height) {
-        return 0;
+        int max=0,left=0,right=height.length-1;
+        while (left!=right){
+            int temp=(right-left);
+            if (height[left]<height[right]){
+                temp*=height[left];
+            }else {
+                temp*=height[right];
+            }
+            if(max<temp){
+                max=temp;
+            }
+        }
+        return max;
     }
 }
